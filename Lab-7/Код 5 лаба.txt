@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int k,i,j,n,m,a[10][10];
+    cout<<"Take n";
+    cin>>n;
+    cout<<"Take m";
+    cin>>m;
+    k=1;
+    for(i=0;i<n;i++){
+        for(j = 0;j<m;j++){
+            a[i][j] = j+k;
+        }
+        k+=1;
+    }
+    for(i=0;i<n;i++){
+        for(j = 0;j<m;j++){
+            cout<<a[i][j]<<"\t";
+            
+        }
+        cout<<endl;
+    }
+    for(i=0;i<n;i++){
+        for(j=m;j!=-1;j--){
+            cout<<a[i][j]<<"\t";
+            
+        }
+        cout<<endl;
+    }
+}

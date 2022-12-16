@@ -1,0 +1,30 @@
+
+#include <iostream>
+#include <ctime>
+#include <string>
+#include <cmath>
+#include <fstream>
+#include <cstring>
+using namespace std;
+int main()
+{
+	int x, a, n, sum = 0;
+	bool Tr = true;
+	setlocale(LC_ALL, "rus");
+	string s1, s2, s5, str;
+	ofstream file("Write.txt");
+	cout << "Write the text:\nIf you want to finish the text - write finish and press enter.\n";
+	while (Tr) {
+		cin >> s5;
+		if (s5 == "finish") {
+			Tr = false;
+		}
+		file << s5 <<" ";
+	}
+	file.close();
+	ifstream fx("Write.txt");
+	while (getline(fx, str)) {
+		cout << str <<endl;
+	}
+	fx.close();
+}

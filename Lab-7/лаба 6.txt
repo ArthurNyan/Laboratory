@@ -1,0 +1,43 @@
+#include <iostream>
+#include <ctime>
+#include <string>
+#include <cmath>
+#include <fstream>
+#include <cstring>
+using namespace std;
+int main()
+{
+	int i, x, a, n, sum = 0;
+	setlocale(LC_ALL, "rus");
+	string s1, s2;
+	ofstream file("Write.txt",fstream::app);
+	file.open("Write.txt");
+	file << "234123";
+	ifstream xxx("Write.txt");
+	while (getline(xxx, s2)) {
+		cout << s2 << "\n";
+	}
+
+
+}
+
+#include <iostream>
+#include <ctime>
+#include <string>
+#include <cmath>
+#include <fstream>
+#include <cstring>
+using namespace std;
+int main()
+{
+	int i, x, a, n, sum = 0;
+	setlocale(LC_ALL, "rus");
+	string s1, s2, s5;
+	ofstream file("Write.txt", fstream::app);
+	cin << s5;
+	file << "efsfdsf";
+	file.close();
+
+
+
+}

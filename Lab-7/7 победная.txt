@@ -1,0 +1,57 @@
+
+#include <iostream>
+#include <ctime>
+#include <string>
+#include <cmath>
+#include <fstream>
+#include <cstring>
+#include <vector>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "RUS");
+	char text[1][256];
+	int i, x, a, n, sum = -1;
+	string code, str,s1, s2;
+	bool TrueFalse = true;
+	ofstream list("aryan.txt");
+
+	cout << "Введите слово для завершения работы\n";
+	cin>> code;
+	cout << "Можно вводить текст\n";
+	do {
+		cin.getline(text[0], 256);
+		if (text[0] == code) {
+			TrueFalse = false;
+		}
+		else {
+			list << text[0] << "\n";
+		}
+	} while (TrueFalse);
+	list.close();
+	ifstream fx("aryan.txt");
+	while (getline(fx, str)) {
+		cout << str << endl;
+	}
+	fx.close();
+	cout << "\nWhat you find?\n";
+	cin >> s2;
+	ifstream file("aryan.txt");
+	if (file.is_open()) {
+		while (getline(file, s1)) {
+			sum++;
+			x = s1.find(s2);
+			if (x != -1) {
+				x++;
+				cout << "Index string - " << sum << "\nIndex element - " << x << "\n";
+			}
+
+		}
+	}
+	file.close();
+}
+
+
+
+
+(, fstream::app) если нужно сохранение старых данных

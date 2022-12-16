@@ -1,0 +1,62 @@
+
+#include <iostream>
+#include <ctime>
+#include <string>
+#include <cmath>
+#include <fstream>
+#include <cstring>
+#include <vector>
+using namespace std;
+/*int why(vector <string> s5) {
+	char space = ' ';
+	int qwer = 0;
+	for (int i = 0; i < s5.length(); i++) {
+		if (s5[i] == space) {
+			qwer++;
+		}
+		
+	}
+	qwer += 1;
+	return qwer;
+}*/
+int main()
+{
+	int x, a, n, sum = 0;
+	bool Tr = true;
+	int space = 0;
+	int how_word,word = 0;
+	int value = 1;
+	setlocale(LC_ALL, "rus");
+	string s1, s2,  str, stringg;
+	vector <string> s5;
+	ofstream file("Write.txt",ios::binary);
+	cout << "Write the text:\nIf you want to finish the text - write finish and press enter.\n";
+	while (Tr) {
+		cin >> s5[word];
+		/*for (int i = 0; i < (int)s5_symbol.length(); i++)
+		{
+			if (s5[i] == ' ')
+				space++;
+		}*/
+		while (Tr) {
+			if (s5[word] == "finish") {
+				Tr = false;
+			}
+			file << s5[word] << ' ';
+			word++;
+			if (space + 1 == value)
+			{
+				file << endl;
+				value = 1;
+			}
+			value++;
+			break;
+		}
+	}
+	file.close();
+	ifstream fx("Write.txt", ios::binary);
+	while (getline(fx, str)) {
+		cout << str << endl ;
+	}
+	fx.close();
+}
